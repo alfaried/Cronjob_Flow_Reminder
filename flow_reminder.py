@@ -29,7 +29,7 @@ for each_dialog in dialogs:
     if 'Thunderhead Monkeys' in each_dialog.name:
         fyp_group = each_dialog
 
-if utcTime.split(':')[0] == '15':
+if utcTime.split(':')[0] == '1':
     client.send_message(fyp_group, 'Hi, this is an automated reminder. Please complete your flow survey. \
                         \n\nWorkflow Survey: https://smu.sg/flow')
 elif utcTime.split(':')[0] == '4':
