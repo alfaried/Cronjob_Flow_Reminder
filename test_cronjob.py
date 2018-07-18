@@ -20,4 +20,4 @@ if not client.is_user_authorized():
     except SessionPasswordNeededError:
         client.sign_in(password=getpass.getpass())
 
-client.send_message('self',Testing)
+client.send_message('self','Testing')
