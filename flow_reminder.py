@@ -1,24 +1,25 @@
-import getpass
+import os
+import datetime
 from telethon import TelegramClient, sync, errors
 from telethon.errors import PhoneNumberUnoccupiedError, SessionPasswordNeededError
-import datetime
 
 utcTime = datetime.datetime.time(datetime.datetime.utcnow()).strftime("%H:%M:%S")
 
 API_ID = '367454'
 API_HASH = '1bf84fb9cec9b739bc9dc2a5fe97ee10'
-phone_number = '6591169096'
+SESSION_FILE = os.path.abspath('telegram_sessions')
+PHONE_NUMBER = '6591169096'
 fyp_group = ''
 
-client = TelegramClient('session_name', API_ID, API_HASH)
+client = TelegramClient(os.path.join(SESSION_FILE,'admin_login.session'), API_ID, API_HASH)
 client.connect()
 
 if not client.is_user_authorized():
-    client.send_code_request(phone_number)
+    client.send_code_request(PHONE_NUMBER)
     try:
-        user = client.sign_in(phone_number, input('Enter code: '))
+        user = client.sign_in(PHONE_NUMBER, input('Enter code: '))
     except PhoneNumberUnoccupiedError:
-        user = client.sign_up(phone_number, input('Enter code: '))
+        user = client.sign_up(PHONE_NUMBER, input('Enter code: '))
     except SessionPasswordNeededError:
         client.sign_in(password=getpass.getpass())
 
