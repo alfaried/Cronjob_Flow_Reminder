@@ -13,7 +13,7 @@ utcTime = datetime.datetime.time(utcDateTime).strftime("%H:%M:%S")
 
 bot = telegram.Bot(token=REMINDER_TOKEN)
 
-if utcDay == 'Saturday'
+if utcDay == 'Saturday':
     if utcTime.split(':')[0] == '01':
         bot.send_message(chat_id=FYP_CHAT_ID, text='Hi, this is an automated reminder. Please complete your flow survey.\n\nWorkflow Survey: https://smu.sg/flow')
     elif utcTime.split(':')[0] == '04':
