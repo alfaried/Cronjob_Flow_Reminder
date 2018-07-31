@@ -21,7 +21,8 @@ if utcDay == 'Saturday':
     elif utcTime.split(':')[0] == '10':
         bot.send_message(chat_id=FYP_CHAT_ID, text='Final reminder for those who have not done so, please complete your workflow survery. Thanks!\n\nWorkflow Survey: https://smu.sg/flow')
 
-bot.send_message(chat_id=FYP_CHAT_ID, text='Please remember to update group Monkey Business HQ on the:\n\n1) Status of your task yesterday\n2) Task you\'re working on today\n3) And if you require any help with any task.\n\nThanks! :)')
+if utcTime.split(':')[0] == '01':
+    bot.send_message(chat_id=FYP_CHAT_ID, text='Please remember to update group Monkey Business HQ on the:\n\n1) Status of your task yesterday\n2) Task you\'re working on today\n3) And if you require any help with any task.\n\nThanks! :)')
 
 
 # SIDE PROJECT:
