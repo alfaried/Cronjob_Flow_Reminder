@@ -33,7 +33,7 @@ if utcDay == 'Friday':
         bot.send_message(chat_id=DA_CHAT_ID, text='Final reminder, do DA self check quiz. Due date is 2300 hrs today!')
 
 if utcTime.split(':')[0] == '01':
-    bot.send_message(chat_id=FYP_CHAT_ID, text='Please remember to update group Monkey Business HQ on the:\n\n1) Status of your task yesterday\n2) Task you\'re working on today\n3) And if you require any help with any task.\n\nThanks!')
+    bot.send_message(chat_id=FYP_CHAT_ID, text='Please remember to update group Monkey Business HQ on the:\n\n1) Status of your task yesterday\n2) Task you\'re working on today\n3) And if you require any help with any task.\n\nGroup Link: https://t.me/joinchat/DlU5uFBQ-YK_fFidHRDu5w\n\nThanks!')
 
 
 # SIDE PROJECT:
