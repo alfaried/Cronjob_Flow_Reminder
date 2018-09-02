@@ -25,7 +25,7 @@ def addPublicKey(username=None,public_key=None):
     # except:
     #     raise Exception('Unable to add public key for user ' + username)
     #
-    bashCommand = 'sudo chmod 777 /home/' + username + ''/.ssh/authorized_keys'
+    bashCommand = 'sudo chmod 777 /home/' + username + '/.ssh/authorized_keys'
     executeBash(bashCommand)
 
     with open(pk_dir,mode='w+') as file:
