@@ -9,5 +9,5 @@ def addUser(username):
     return output, error
 
 if __name__ == "__main__":
-    output, error = addUser(test)
+    output, error = addUser('test')
     print(output)
