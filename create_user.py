@@ -20,7 +20,7 @@ def addPublicKey(username=None,public_key=None):
     # bashCommand_2 = 'sudo bash -c "echo \'' + public_key + '\' >> ' + pk_dir + '"'
     # bashCommand_1 = 'sudo bash -c "echo hi >> ' + pk_dir + '"'
     bashCommand_1 = 'sudo bash -c "echo hi >> /home/test/.ssh/authorized_keys"'
-    print(bashCommand_1)
+    print(bashCommand_1.split())
     try:
         executeBash(bashCommand_1)
     except:
