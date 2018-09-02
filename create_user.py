@@ -16,7 +16,7 @@ def addPublicKey(username=None,public_key=None):
         public_key = 'ssh-rsa' + public_key
 
     pk_dir = '/home/' + username + '/.ssh/authorized_keys'
-    bashCommand = 'sudo bash -c "echo ' + public_key + ' >> ' + pk_dir + "'
+    bashCommand = 'sudo bash -c "echo ' + public_key + ' >> ' + pk_dir + '"'
 
     try:
         subprocess.Popen(shlex.split(bashCommand), stdout=subprocess.PIPE)
