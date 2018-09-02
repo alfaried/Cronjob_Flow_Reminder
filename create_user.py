@@ -38,10 +38,10 @@ def addValidUser(username):
 
 
 # Return output : tuple, error : default-None
-def addValidUser(username):
+def addUser(username):
     bashCommand = 'sudo adduser ' + username
     return executeBash(bashCommand)
-    
+
 
 # Return output : tuple, error : default-None
 def delUser(username):
@@ -57,3 +57,4 @@ def accessUser(username):
 
 if __name__ == "__main__":
     # Run test commands here
+    print(addValidUser('test'))
