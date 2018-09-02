@@ -30,7 +30,7 @@ if __name__ == "__main__":
     # Run test commands here
     # home = str(Path.home())
     output,error = addUser('test')
-    print(output)
+    print(output.decode('utf-8'))
     print(type(output))
     print(error)
     print(type(error))
