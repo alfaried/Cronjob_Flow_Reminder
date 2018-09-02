@@ -30,9 +30,7 @@ if __name__ == "__main__":
     # Run test commands here
     # home = str(Path.home())
     output = addUser('test')
-    output = output.decode('utf-8')
-    print(output)
-    print(type(output))
-    # if output.decode('utf-8') == '':
-    #     dir = '/home/test/.ssh'
-    #     os.makedirs(dir)
+
+    if output == b'':
+        dir = '/home/test/.ssh'
+        os.makedirs(dir)
