@@ -1,3 +1,6 @@
+# Delete current user
+sudo userdel -r test
+
 # Create a new user
 sudo adduser test
 
@@ -13,5 +16,5 @@ sudo chmod 600 /home/test/.ssh/authorized_keys
 sudo echo '# test public key' >> /home/test/.ssh/authorized_keys
 
 # Assign new user
-sudo chown test:test /home/test/.ssh
-sudo chown test:test /home/test/.ssh/authorized_keys
+# sudo chown test:test /home/test/.ssh
+# sudo chown test:test /home/test/.ssh/authorized_keys
