@@ -16,11 +16,12 @@ def addPublicKey(username=None,public_key=None):
         public_key = 'ssh-rsa' + public_key
 
     pk_dir = '/home/' + username + '/.ssh/authorized_keys'
-    bashCommand_1 = 'sudo bash -c "echo \'# ' + username + ' public key\' >> ' + pk_dir + '"'
-    bashCommand_2 = 'sudo bash -c "echo \'' + public_key + '\' >> ' + pk_dir + '"'
+    # bashCommand_1 = 'sudo bash -c "echo \'# ' + username + ' public key\' >> ' + pk_dir + '"'
+    # bashCommand_2 = 'sudo bash -c "echo \'' + public_key + '\' >> ' + pk_dir + '"'
+    bashCommand_1 = 'sudo bash -c "echo \'hi\' >> ' + pk_dir + '"'
+    print(bashCommand_1)
     try:
         executeBash(bashCommand_1)
-        executeBash(bashCommand_2)
     except:
         raise Exception('Unable to add public key for user ' + username)
 
