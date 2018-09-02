@@ -29,8 +29,7 @@ def accessUser(username):
 if __name__ == "__main__":
     # Run test commands here
     # home = str(Path.home())
-    output = addUser('test')
-
-    if output == b'':
-        dir = '/home/test/.ssh'
-        os.makedirs(dir)
+    delUser('test')
+    addUser('test')
+    dir = '/home/test/.ssh'
+    os.makedirs(dir)
