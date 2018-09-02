@@ -9,30 +9,33 @@ def executeBash(bashCommand):
 
 # Return True is user is create. ELSE False
 def addValidUser(username):
-    bashCommand = 'sudo adduser ' + username
-    executeBash(bashCommand)
+    try:
+        bashCommand = 'sudo adduser ' + username
+        executeBash(bashCommand)
 
-    # ========================= Create .ssh folder ========================== #
+        # ========================= Create .ssh folder ========================== #
 
-    bashCommand = 'sudo mkdir /home/' + username + '/.ssh'
-    executeBash(bashCommand)
+        bashCommand = 'sudo mkdir /home/' + username + '/.ssh'
+        executeBash(bashCommand)
 
-    bashCommand = 'sudo chown ' + username + ':' + username + ' /home/' + username + '/.ssh'
-    executeBash(bashCommand)
+        bashCommand = 'sudo chown ' + username + ':' + username + ' /home/' + username + '/.ssh'
+        executeBash(bashCommand)
 
-    bashCommand = 'sudo chmod 700 /home/' + username + '/.ssh'
-    executeBash(bashCommand)
+        bashCommand = 'sudo chmod 700 /home/' + username + '/.ssh'
+        executeBash(bashCommand)
 
-    # ===================== Create authorized_keys file ===================== #
+        # ===================== Create authorized_keys file ===================== #
 
-    bashCommand = 'sudo touch /home/' + username + '/.ssh/authorized_keys'
-    executeBash(bashCommand)
+        bashCommand = 'sudo touch /home/' + username + '/.ssh/authorized_keys'
+        executeBash(bashCommand)
 
-    bashCommand = 'sudo chown ' + username + ':' + username + ' /home/' + username + '/.ssh/authorized_keys'
-    executeBash(bashCommand)
+        bashCommand = 'sudo chown ' + username + ':' + username + ' /home/' + username + '/.ssh/authorized_keys'
+        executeBash(bashCommand)
 
-    bashCommand = 'sudo chmod 600 /home/' + username + '/.ssh/authorized_keys'
-    executeBash(bashCommand)
+        bashCommand = 'sudo chmod 600 /home/' + username + '/.ssh/authorized_keys'
+        executeBash(bashCommand)
+    except:
+        return False
 
     return True
 
@@ -57,4 +60,5 @@ def accessUser(username):
 
 if __name__ == "__main__":
     # Run test commands here
+    delUser(username)
     print(addValidUser('test'))
