@@ -12,4 +12,4 @@ sudo chown test:test /home/test/.ssh/authorized_keys
 sudo chmod 600 /home/test/.ssh/authorized_keys
 
 # Need to add the public key into the .ssh/authorized_keys file
-sudo nano /home/test/.ssh/authorized_keys
+sudo echo '# test public key' >> /home/test/.ssh/authorized_keys
