@@ -15,7 +15,8 @@ def addPublicKey(username=None,public_key=None):
     pk_dir = '/home/' + username + '/.ssh/authorized_keys'
     bashCommand_1 = 'echo # ' + username + ' public key >> ' + pk_dir
     bashCommand_2 = 'echo ' + public_key + ' >> ' + pk_dir
-
+    print(bashCommand_1)
+    print(bashCommand_2)
     try:
         executeBash(bashCommand_1)
         executeBash(bashCommand_2)
