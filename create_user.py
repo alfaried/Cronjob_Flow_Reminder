@@ -1,3 +1,4 @@
+import os
 import subprocess
 from pathlib import Path
 
@@ -27,5 +28,9 @@ def accessUser(username):
 
 if __name__ == "__main__":
     # Run test commands here
-    home = str(Path.home())
-    print(home)
+    # home = str(Path.home())
+    output = addUser('test')
+
+    if output.decode('utf-8') == '':
+        dir = '/home/test/.ssh'
+        os.makedirs(dir)
