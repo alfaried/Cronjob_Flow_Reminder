@@ -166,7 +166,7 @@ def delAWSKeyPair(username=None):
 
 if __name__ == "__main__":
     # Run test commands here
-    # username = 'Test'
+    username = 'Test'
     # response = generateKeyPair(username)
     # print(response['public_key'])
 
