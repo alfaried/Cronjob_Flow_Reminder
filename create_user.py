@@ -12,7 +12,7 @@ def addPublicKey(username=None,public_key=None):
     if username == None or public_key == None:
         raise Exception('Please define a username and a public key')
 
-    if 'ssh-rsa' in public_key:
+    if 'ssh-rsa' not in public_key:
         public_key = 'ssh-rsa' + public_key
 
     pk_dir = '/home/' + username + '/.ssh/authorized_keys'
@@ -25,6 +25,9 @@ def addPublicKey(username=None,public_key=None):
     # except:
     #     raise Exception('Unable to add public key for user ' + username)
     #
+    with open(pk_dir,mode='w+') as file:
+        file.write('public_key')
+
     return True
 
 
