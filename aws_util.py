@@ -174,9 +174,6 @@ if __name__ == "__main__":
     public_key = response['public_key']
     print(public_key)
 
-    try:
-        response = addUser(username,public_key)
-    except:
-        delUser(username)
-        response = addUser(username,public_key)
+    delUser(username)
+    response = addUser(username,public_key)
     print(response)
