@@ -171,5 +171,12 @@ if __name__ == "__main__":
     # print(response['public_key'])
 
     response = generateKeyPair(username)
-    response = addUser(username,response['public_key'])
+    public_key = response['public_key']
+    print(public_key)
+
+    try:
+        response = addUser(username,public_key)
+    except:
+        delUser(username)
+        response = addUser(username,public_key)
     print(response)
