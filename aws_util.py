@@ -18,11 +18,11 @@ def addPublicKey(username=None,public_key=None):
         public_key = 'ssh-rsa ' + public_key
 
     pk_dir = '/home/' + username + '/.ssh/authorized_keys'
-    # bashCommand = 'sudo bash -c "echo # ' + username + ' public key >> ' + pk_dir + '"'
+    bashCommand = 'sudo bash -c "echo # ' + username + ' public key >> ' + pk_dir + '"'
     bashCommand_1 = 'sudo bash -c "echo ' + public_key + ' >> ' + pk_dir + '"'
 
     try:
-        # subprocess.Popen(shlex.split(bashCommand), stdout=subprocess.PIPE)
+        subprocess.Popen(shlex.split(bashCommand), stdout=subprocess.PIPE)
         subprocess.Popen(shlex.split(bashCommand_1), stdout=subprocess.PIPE)
     except:
         raise Exception('Unable to add public key for user ' + username)
@@ -171,8 +171,7 @@ if __name__ == "__main__":
     # print(response['public_key'])
 
     response = generateKeyPair(username)
-    public_key = response['public_key']
-    print(public_key)
+    public_key = response['public_key'].strip()
 
     delUser(username)
     response = addUser(username,public_key)
