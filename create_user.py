@@ -29,11 +29,10 @@ def accessUser(username):
 if __name__ == "__main__":
     # Run test commands here
     # home = str(Path.home())
-    output,error = addUser('test')
-    print(output.decode('utf-8'))
+    output = addUser('test')
+    output = output.decode('utf-8')
+    print(output)
     print(type(output))
-    print(error)
-    print(type(error))
     # if output.decode('utf-8') == '':
     #     dir = '/home/test/.ssh'
     #     os.makedirs(dir)
