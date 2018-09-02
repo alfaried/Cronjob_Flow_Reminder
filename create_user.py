@@ -33,10 +33,9 @@ if __name__ == "__main__":
     addUser('test')
     ssh_dir = '/home/test/.ssh'
     key_dir = '/home/test/.ssh/authorized_keys'
-    desired_permission = 700
 
-    try:
-        original_umask = os.umask(0)
-        os.makedirs(dir, desired_permission)
-    finally:
-        os.umask(original_umask)
+    os.makedirs(path=ssh_dir, mode=700)
+    os.chmod(path=ssh_dir, mode=700)
+
+    os.makedirs(path=key_dir, mode=700)
+    os.chmod(path=key_dir, mode=600)
