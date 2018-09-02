@@ -16,9 +16,6 @@ def addPublicKey(username=None,public_key=None):
         public_key = 'ssh-rsa' + public_key
 
     pk_dir = '/home/' + username + '/.ssh/authorized_keys'
-    bashCommand = 'sudo cat >> ' + pk_dir
-    executeBash(bashCommand)
-    executeBash(public_key)
     # bashCommand_1 = 'sudo echo \'# ' + username + ' public key\' >> ' + pk_dir
     # bashCommand_2 = 'sudo echo \'' + public_key + '\' >> ' + pk_dir
     #
