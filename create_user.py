@@ -32,4 +32,10 @@ if __name__ == "__main__":
     delUser('test')
     addUser('test')
     dir = '/home/test/.ssh'
-    os.makedirs(dir)
+    desired_permission = '0777'
+
+    try:
+        original_umask = os.umask(0)
+        os.makedirs(dir, desired_permission)
+    finally:
+        os.umask(original_umask)
