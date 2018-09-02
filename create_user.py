@@ -31,8 +31,9 @@ if __name__ == "__main__":
     # home = str(Path.home())
     delUser('test')
     addUser('test')
-    dir = '/home/test/.ssh'
-    desired_permission = 0777
+    ssh_dir = '/home/test/.ssh'
+    key_dir = '/home/test/.ssh/authorized_keys'
+    desired_permission = 700
 
     try:
         original_umask = os.umask(0)
