@@ -24,9 +24,6 @@ def addPublicKey(username=None,public_key=None):
     #     executeBash(bashCommand_2)
     # except:
     #     raise Exception('Unable to add public key for user ' + username)
-    #
-    bashCommand = 'sudo chmod 777 /home/' + username + '/.ssh/authorized_keys'
-    executeBash(bashCommand)
 
     with open(pk_dir,mode='w+') as file:
         file.write('public_key')
@@ -64,13 +61,13 @@ def addUser(username=None,public_key=None):
     bashCommand = 'sudo chown ' + username + ':' + username + ' /home/' + username + '/.ssh/authorized_keys'
     executeBash(bashCommand)
 
-    bashCommand = 'sudo chmod 600 /home/' + username + '/.ssh/authorized_keys'
-    executeBash(bashCommand)
-
     # ============================ Add public key =========================== #
 
     if public_key != None:
         return addPublicKey(username,public_key)
+
+    bashCommand = 'sudo chmod 600 /home/' + username + '/.ssh/authorized_keys'
+    executeBash(bashCommand)
 
     return True
 
