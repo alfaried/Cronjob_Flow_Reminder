@@ -34,8 +34,8 @@ if __name__ == "__main__":
     ssh_dir = '/home/test/.ssh'
     key_dir = '/home/test/.ssh/authorized_keys'
 
-    os.makedirs(path=ssh_dir, mode=700)
+    os.makedirs(ssh_dir, mode=700)
     os.chmod(path=ssh_dir, mode=700)
 
-    os.makedirs(path=key_dir, mode=700)
+    os.makedirs(key_dir, mode=700)
     os.chmod(path=key_dir, mode=600)
