@@ -1,6 +1,5 @@
 import os
 import subprocess
-from pathlib import Path
 
 # Return output : tuple, error : default-None
 def executeBash(bashCommand):
@@ -8,11 +7,41 @@ def executeBash(bashCommand):
     return process.communicate()
 
 
+# Return True is user is create. ELSE False
+def addValidUser(username):
+    bashCommand = 'sudo adduser ' + username
+    executeBash(bashCommand)
+
+    # ========================= Create .ssh folder ========================== #
+
+    bashCommand = 'sudo mkdir /home/' + username + '/.ssh'
+    executeBash(bashCommand)
+
+    bashCommand = 'sudo chown ' + username + ':' + username + ' /home/' + username + '/.ssh'
+    executeBash(bashCommand)
+
+    bashCommand = 'sudo chmod 700 /home/' + username + '/.ssh'
+    executeBash(bashCommand)
+
+    # ===================== Create authorized_keys file ===================== #
+
+    bashCommand = 'sudo touch /home/' + username + '/.ssh/authorized_keys'
+    executeBash(bashCommand)
+
+    bashCommand = 'sudo chown ' + username + ':' + username + ' /home/' + username + '/.ssh/authorized_keys'
+    executeBash(bashCommand)
+
+    bashCommand = 'sudo chmod 600 /home/' + username + '/.ssh/authorized_keys'
+    executeBash(bashCommand)
+
+    return True
+
+
 # Return output : tuple, error : default-None
-def addUser(username):
+def addValidUser(username):
     bashCommand = 'sudo adduser ' + username
     return executeBash(bashCommand)
-
+    
 
 # Return output : tuple, error : default-None
 def delUser(username):
@@ -28,14 +57,3 @@ def accessUser(username):
 
 if __name__ == "__main__":
     # Run test commands here
-    # home = str(Path.home())
-    delUser('test')
-    addUser('test')
-    ssh_dir = '/home/test/.ssh'
-    key_dir = '/home/test/.ssh/authorized_keys'
-
-    os.makedirs(ssh_dir, mode=0777)
-    os.chmod(path=ssh_dir, mode=700)
-
-    os.makedirs(key_dir, mode=0777)
-    os.chmod(path=key_dir, mode=600)
