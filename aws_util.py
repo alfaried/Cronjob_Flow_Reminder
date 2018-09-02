@@ -101,7 +101,7 @@ def generateKeyPair(username=None):
     file_path = os.path.join(os.getcwd(),key_name+'.pem')
     result = writeKeyPairFile(private_key,file_path)
 
-    return {'key_name':key_name,'private_key':private_key,'public_key':getPublicKey(username,file_path).decode('utf-8')}
+    return {'key_name':key_name,'private_key':private_key,'public_key':getPublicKey(username,file_path).decode('utf-8').strip()}
 
 
 # Return public key : String
@@ -171,7 +171,7 @@ if __name__ == "__main__":
     # print(response['public_key'])
 
     response = generateKeyPair(username)
-    public_key = response['public_key'].strip()
+    public_key = response['public_key']
 
     delUser(username)
     response = addUser(username,public_key)
