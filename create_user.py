@@ -58,16 +58,18 @@ def addUser(username=None,public_key=None):
     bashCommand = 'sudo touch /home/' + username + '/.ssh/authorized_keys'
     executeBash(bashCommand)
 
+    if public_key != None:
+        return addPublicKey(username,public_key)
+
     bashCommand = 'sudo chown ' + username + ':' + username + ' /home/' + username + '/.ssh/authorized_keys'
+    executeBash(bashCommand)
+
+    bashCommand = 'sudo chmod 600 /home/' + username + '/.ssh/authorized_keys'
     executeBash(bashCommand)
 
     # ============================ Add public key =========================== #
 
-    if public_key != None:
-        return addPublicKey(username,public_key)
 
-    bashCommand = 'sudo chmod 600 /home/' + username + '/.ssh/authorized_keys'
-    executeBash(bashCommand)
 
     return True
 
