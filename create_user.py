@@ -60,5 +60,7 @@ def accessUser(username):
 
 if __name__ == "__main__":
     # Run test commands here
-    delUser('test')
-    print(addValidUser('test'))
+    output,error = addUser('test')
+
+    print(output)
+    print(error)
