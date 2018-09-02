@@ -20,7 +20,7 @@ def addPublicKey(username=None,public_key=None):
     pk_dir = '/home/' + username + '/.ssh/authorized_keys'
     bashCommand = 'sudo bash -c "echo # ' + username + ' public key >> ' + pk_dir + '"'
     bashCommand_1 = 'sudo bash -c "echo ' + public_key + ' >> ' + pk_dir + '"'
-
+    print('test')
     try:
         subprocess.Popen(shlex.split(bashCommand), stdout=subprocess.PIPE)
         subprocess.Popen(shlex.split(bashCommand_1), stdout=subprocess.PIPE)
