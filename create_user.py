@@ -12,7 +12,7 @@ def addPublicKey(username=None,public_key=None):
     if username == None or public_key == None:
         raise Exception('Please define a username and a public key')
 
-    pk_dir = '/home/' + username + '/.ssh/authorized_keys''
+    pk_dir = '/home/' + username + '/.ssh/authorized_keys'
     bashCommand_1 = 'echo # ' + username + ' public key >> ' + pk_dir
     bashCommand_2 = 'echo ' + public_key + ' >> ' + pk_dir
 
