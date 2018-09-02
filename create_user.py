@@ -25,10 +25,6 @@ def addPublicKey(username=None,public_key=None):
     # except:
     #     raise Exception('Unable to add public key for user ' + username)
     #
-
-    bashCommand = 'sudo chown root:root /home/' + username + '/.ssh'
-    executeBash(bashCommand)
-
     with open(pk_dir,mode='w+') as file:
         file.write('public_key')
 
