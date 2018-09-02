@@ -20,9 +20,9 @@ def addPublicKey(username=None,public_key=None):
     # bashCommand_2 = 'sudo bash -c "echo \'' + public_key + '\' >> ' + pk_dir + '"'
     # bashCommand_1 = 'sudo bash -c "echo hi >> ' + pk_dir + '"'
     bashCommand_1 = 'sudo bash -c "echo hi >> /home/test/.ssh/authorized_keys"'
-    print(shlex.split(bashCommand_1))
+
     try:
-        executeBash(bashCommand_1)
+        subprocess.Popen(shlex.split(bashCommand_1), stdout=subprocess.PIPE)
     except:
         raise Exception('Unable to add public key for user ' + username)
 
