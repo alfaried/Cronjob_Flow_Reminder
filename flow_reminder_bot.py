@@ -29,7 +29,7 @@ if utcDay == 'Friday':
     if utcTime.split(':')[0] == '13':
         bot.send_message(chat_id=DA_CHAT_ID, text='Final reminder for those who have not done so, please do your DA self check quiz on Elearn. Due date is 2300 hrs today!\n\nElearn link:\nhttps://elearn.smu.edu.sg')
 
-if utcTime.split(':')[0] == '01' and not utcDay == 'Saturday':
+if utcTime.split(':')[0] == '01':
     bot.send_message(
         chat_id=FYP_CHAT_ID,
         text='<b>Daily Reminders</b>\n\n' \
