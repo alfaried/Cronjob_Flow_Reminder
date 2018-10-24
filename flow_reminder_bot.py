@@ -22,6 +22,12 @@ if utcDay == 'Saturday':
         bot.send_message(chat_id=FYP_CHAT_ID, text='Final reminder for those who have not done so, please complete your workflow survery. Thanks!\n\nWorkflow Survey: https://smu.sg/flow')
 
 if utcDay == 'Thursday':
+    if utcTime.split(':')[0] == '05':
+        bot.send_message(chat_id=FYP_CHAT_ID, text='@MartinTeo and @Slaphappy remember to clear and configure DB for UT')
+
+    if utcTime.split(':')[0] == '05' and utcTime.split(':')[1] == '30':
+        bot.send_message(chat_id=FYP_CHAT_ID, text='@MartinTeo and @Slaphappy final checks on testing server. Make sure everything is Aok!')
+
     if utcTime.split(':')[0] == '13':
         bot.send_message(chat_id=DA_CHAT_ID, text='Remember to do DA self check quiz on Elearn. Due date is 2300 hrs tomorrow!\n\nElearn link:\nhttps://elearn.smu.edu.sg')
 
