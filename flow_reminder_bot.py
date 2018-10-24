@@ -23,7 +23,7 @@ if utcDay == 'Saturday':
 
 if utcDay == 'Thursday':
     if utcTime.split(':')[0] == '05':
-        bot.send_message(chat_id=FYP_CHAT_ID, text='@MartinTeo and @Slaphappy remember to clear and configure DB for UT')
+        bot.send_message(chat_id=FYP_CHAT_ID, text='@MartinTeo and @Slaphappy remember to clear and configure DB for UT\n\n1. Course and Faculty information has to be uploaded (admin)\n2. Student and Team info has to be uploaded (faculty)\n3. Check and make sure image permission is clear in AWS account and in test server DB\n4. Goodluck')
 
     if utcTime.split(':')[0] == '05' and utcTime.split(':')[1] == '30':
         bot.send_message(chat_id=FYP_CHAT_ID, text='@MartinTeo and @Slaphappy final checks on testing server. Make sure everything is Aok!')
